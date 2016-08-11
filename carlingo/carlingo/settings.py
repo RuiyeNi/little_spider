@@ -13,6 +13,7 @@ BOT_NAME = 'carlingo'
 
 SPIDER_MODULES = ['carlingo.spiders']
 NEWSPIDER_MODULE = 'carlingo.spiders'
+IMAGES_STORE= '/Users/codehi/Documents/github_project/carlingo/output'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
