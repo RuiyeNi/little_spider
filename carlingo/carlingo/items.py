@@ -22,12 +22,13 @@ class CarlingoItem(Item):
 
     # # attr group
     condition=Field()
-    # cylinders = Field()
-    # drive = Field()
+    cylinders = Field()
+    drive = Field()
     fuel = Field()
-    # odometer = Field()
+    odometer = Field()
     paint_color = Field()
-    # size = Field()
+    size = Field()
     title_status=Field()
     transmission = Field()
     model = Field()
+    image_urls = Field()
