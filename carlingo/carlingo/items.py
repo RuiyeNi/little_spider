@@ -32,3 +32,5 @@ class CarlingoItem(Item):
     transmission = Field()
     model = Field()
     image_urls = Field()
+    VIN = Field()
+    post_id=Field()
