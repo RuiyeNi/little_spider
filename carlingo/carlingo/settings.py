@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+#from scrapy.settings.default_settings import ITEM_PIPELINES
 # Scrapy settings for carlingo project
 #
 # For simplicity, this file contains only settings considered important or
@@ -8,13 +8,39 @@
 #     http://doc.scrapy.org/en/latest/topics/settings.html
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+import sys
+import MySQLdb
+import redis
 
 BOT_NAME = 'carlingo'
+BOT_VERSION = '1.0'
 
+# SCRAPY SETTING
 SPIDER_MODULES = ['carlingo.spiders']
 NEWSPIDER_MODULE = 'carlingo.spiders'
-IMAGES_STORE= '/Users/codehi/Documents/github_project/carlingo/output'
+#IMAGES_STORE= '/Users/codehi/Documents/github_project/carlingo/output'
+USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
 
+# SQL DATABASE SETTING
+#MYSQL_DB = 'scrapyDB'
+#MYSQL_TABLE = 'carlingo'
+#MYSQL_HOST = 'localhost'
+#MYSQL_USER = 'root'
+#MYSQL_PASSWD = '12345'
+
+# connect to the MySQL server
+#try:
+#    CONN = MySQLdb.connect(host = MYSQL_HOST,
+#                           user = MYSQL_USER,
+#                           passwd = MYSQL_PASSWD,
+#                           db = SQL_DB)
+#except MySQLdb.Error, e:
+#    print "Error %d: %s" % (e.args[0], e.args[1])
+#    sys.exit(1)
+
+ITEM_PIPELINES = {
+     'carlingo.pipelines.CarlingoPipeline': 0
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'carlingo (+http://www.yourdomain.com)'
